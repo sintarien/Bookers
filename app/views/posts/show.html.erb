@@ -1,0 +1,13 @@
+<p class="midori"><%= flash[:notice] %></p>
+ 
+<div ="hako">
+<h2>Title: <%= @post.title %></h2>
+
+<h2>Body: <%= @post.body %></h2>
+</div>
+<%= link_to "Edit", edit_post_path(@post.id),class: "edit_#{@post.id}" %>
+
+
+
+
+<%=link_to "Back",  "/posts",class: "back" %>

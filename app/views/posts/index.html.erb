@@ -1,0 +1,52 @@
+
+<p class="midori"><%= flash[:notice] %></p>
+
+<h1>Books</h1>
+ <div ="flash-color">
+ 	
+ </div>
+
+
+ <table>
+ 	<thead>
+ 		<tr>
+ 			<th>Title</th>
+ 			<th>Body</th>
+ 			<th></th>
+ 			<th></th>
+ 			<th></th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+		<% @posts.each do |post| %>
+
+			<tr>
+				<td><%= post.title %></td>
+				<td><%= post.body%></td>
+				<!-- <td><a href="/posts">show</a></td> -->
+				<td><%= link_to "show", post_path(post),class: "show_#{post.id}" %></td>
+				<td><%= link_to "Edit", edit_post_path(post),class: "edit_#{post.id}" %></td>
+				<td><%= link_to "Destroy", destroy_post_path(post), method: :delete, data: { confirm: 'Are you sure?',class: "destroy_#{post.id}"  } %></td>
+			</tr>
+		<% end %>
+ 	</tbody>
+ </table>
+
+
+
+
+<h1> New book</h1>
+
+<%= form_for(@post) do |f| %>
+
+	<h4> Title</h4>
+	<%= f.text_field :title,class: "book_title" %>
+
+	<h4> Body</h4>
+	<%= f.text_area :body,class: "book_body" %>
+
+	<%= f.submit 'Create Book' %>
+
+<% end %>
+
+
