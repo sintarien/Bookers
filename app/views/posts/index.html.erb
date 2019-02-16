@@ -26,7 +26,7 @@
 				<!-- <td><a href="/posts">show</a></td> -->
 				<td><%= link_to "show", post_path(post),class: "show_#{post.id}" %></td>
 				<td><%= link_to "Edit", edit_post_path(post),class: "edit_#{post.id}" %></td>
-				<td><%= link_to "Destroy", destroy_post_path(post), method: :delete, data: { confirm: 'Are you sure?',class: "destroy_#{post.id}"  } %></td>
+				<td><%= link_to "Destroy", destroy_post_path(post), method: :delete, data: { confirm: 'Are you sure?'  } ,class: "destroy_#{post.id}"%></td>
 			</tr>
 		<% end %>
  	</tbody>
